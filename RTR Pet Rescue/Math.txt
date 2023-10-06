@@ -1,0 +1,7 @@
+1) Distance of 2 circle is 0.9+0.9 = 1.8;
+
+=> cicle in 45 degree have position is: this.x + 1.27; this.y + 1.27
+(1.27 = 1.8 * 1/v2).
+2) Distance of Lock and center is 1.02;
+=> lock i 45 degree have position is: this.x + 0.72; this.y + 0.72
+(0.72 = 1.02 * 1/v2). 
