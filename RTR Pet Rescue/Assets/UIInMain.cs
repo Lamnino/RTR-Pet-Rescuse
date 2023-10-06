@@ -3,18 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro; 
 using DG.Tweening;
-using UnityEngine.SceneManagement;
-
+using System;
+using UnityEngine.UI;
+public static class ToggleExtension
+{
+    public static void AddOnValueChangedListener<T>(this Toggle toggle, T param, Action<T, bool> onValueChanged)
+    {
+        toggle.onValueChanged.AddListener(delegate (bool value)
+        {
+            onValueChanged(param, value);
+        });
+    }
+}
 public class UIInMain : MonoBehaviour
 {
     [SerializeField] Transform CoinParent;
-    [SerializeField] TextMeshProUGUI CoinNumber;
+    [SerializeField] public TextMeshProUGUI CoinNumberthem;
+    [SerializeField] public TextMeshProUGUI CoinNumber;
     [SerializeField] TextMeshProUGUI LevelTx;
+    [SerializeField] List<Sprite> image;
+    [SerializeField] Image CongratulateImage;
+    [SerializeField] Toggle toggleBGPref;
+    [SerializeField] Transform ContentToggleBG;
+    [SerializeField] GameObject announce;
     private void Start()
     {
+        // coin text
         CoinNumber.text = Gamemng.instane.coin.ToString();
+        CoinNumberthem.text = Gamemng.instane.coin.ToString();
+        //level text
         LevelTx.text = $"Level {Gamemng.instane.Level}";
+        //congratulate
+            CongratulateImage.sprite = image[UnityEngine.Random.Range(0, 5)];
     }
+    /// <summary>
+    /// animation of coin  claim in main UI
+    /// </summary>
     public void Cointranform()
     {
         CoinParent.gameObject.SetActive(true);
@@ -30,6 +54,10 @@ public class UIInMain : MonoBehaviour
         }
             StartCoroutine(CountCoint());
     }
+    /// <summary>
+    /// add coin when claim colab with effect claim
+    /// </summary>
+    /// <returns></returns>
     IEnumerator CountCoint()
     {
             yield return new WaitForSeconds(0.7f);
@@ -44,5 +72,63 @@ public class UIInMain : MonoBehaviour
             timeadd += 0.011f;
         }
         Gamemng.instane.NetLevel();
+    }
+    /// <summary>
+    /// Chose Background sprite will random to applied
+    /// </summary>
+    /// <param name="sprite">sprite</param>
+    /// <param name="result">chose or not</param>
+    public void ToggleBG(Sprite sprite, bool result)
+    {
+        if (!result)
+        {
+            if (Gamemng.instane.spriteBG.Contains(sprite))
+            Gamemng.instane.spriteBG.Remove(sprite);
+        }
+        else
+        {
+            if (!Gamemng.instane.spriteBG.Contains(sprite))
+                Gamemng.instane.spriteBG.Add(sprite);
+        }
+    }
+    /// <summary>
+    /// Background will unlock and aplli when you see video
+    /// </summary>
+    /// <param name="sprite"></param>
+    public void BGVideo(Sprite sprite)
+    {
+            if (!Gamemng.instane.spriteBG.Contains(sprite))
+        Gamemng.instane.spriteBG.Add(sprite);
+        Toggle tg = Instantiate(toggleBGPref, ContentToggleBG).GetComponent<Toggle>();
+        tg.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
+        tg.transform.SetAsFirstSibling();
+        tg.AddOnValueChangedListener(sprite, ToggleBG);
+    }
+    public void ToggleBBG(Sprite sprite)
+    {
+              if (Gamemng.instane.spriteBG.Contains(sprite))
+                Gamemng.instane.spriteBG.Remove(sprite);
+        else
+            if (!Gamemng.instane.spriteBG.Contains(sprite))
+                Gamemng.instane.spriteBG.Add(sprite);
+    }
+    /// <summary>
+    /// Anouncement when you do action (ex: buy sprite of ring)
+    /// </summary>
+    /// <param name="s"></param>
+    /// <param name="isWarn"></param>
+    public void  Ann(string s, bool isWarn)
+    {
+        announce.SetActive(true);
+        if (isWarn)
+        {
+            announce.transform.GetChild(1).gameObject.SetActive(true);
+            announce.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = s;
+        }
+        else
+        {
+            announce.transform.GetChild(0).gameObject.SetActive(true);
+            announce.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = s;
+        }
     }
 }

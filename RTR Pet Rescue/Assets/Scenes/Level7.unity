@@ -484,6 +484,7 @@ GameObject:
   - component: {fileID: 1449679688}
   - component: {fileID: 1449679687}
   - component: {fileID: 1449679686}
+  - component: {fileID: 1449679690}
   m_Layer: 5
   m_Name: Canvas (6)
   m_TagString: Untagged
@@ -573,6 +574,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1449679690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449679685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4aedd2e09368324c9e803b67baa3e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1774582128
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +706,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 895800859680719182, guid: 4b9952f91e73d4d4b9307309dba8ca00, type: 3}
+      propertyPath: dy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 895800859680719182, guid: 4b9952f91e73d4d4b9307309dba8ca00, type: 3}
+      propertyPath: Lock.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 895800859680719182, guid: 4b9952f91e73d4d4b9307309dba8ca00, type: 3}
       propertyPath: Lock.Array.data[0]
       value: 
       objectReference: {fileID: 1357398799}
@@ -711,6 +732,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 895800859680719181, guid: 4b9952f91e73d4d4b9307309dba8ca00, type: 3}
   m_PrefabInstance: {fileID: 895800859511595774}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &895800859511595776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 895800859680719185, guid: 4b9952f91e73d4d4b9307309dba8ca00, type: 3}
+  m_PrefabInstance: {fileID: 895800859511595774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &895800859511595777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895800859511595776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86220c2c92783f4f9bdbc8ed40ea623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dx: 0
+  dy: 0
+  IsHeld: 0
+  IsLock: 0
+  Lock:
+  - {fileID: 1357398799}
+  - {fileID: 427205479}
+  Block: []
+  dircblock: 0
+  angleDegrees: 0
+  touchBefore: 0
 --- !u!1001 &8957748855939772617
 PrefabInstance:
   m_ObjectHideFlags: 0

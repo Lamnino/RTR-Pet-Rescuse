@@ -264,6 +264,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eee628c910c299744a85e373a866cf8a, type: 3}
+--- !u!1 &346753297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3103295423433164803, guid: eee628c910c299744a85e373a866cf8a, type: 3}
+  m_PrefabInstance: {fileID: 346753296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &680388225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -321,6 +326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7378d3132c6e747438dbbcbf66225712, type: 3}
+--- !u!1 &680388226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3768939799230656155, guid: 7378d3132c6e747438dbbcbf66225712, type: 3}
+  m_PrefabInstance: {fileID: 680388225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &697431289
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +343,7 @@ GameObject:
   - component: {fileID: 697431292}
   - component: {fileID: 697431291}
   - component: {fileID: 697431290}
+  - component: {fileID: 697431294}
   m_Layer: 5
   m_Name: Canvas (1)
   m_TagString: Untagged
@@ -422,6 +433,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &697431294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697431289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4aedd2e09368324c9e803b67baa3e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1329446537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8159454444421866485, guid: 7878aa8f58af0e544a61c1960faf1581, type: 3}
@@ -707,6 +730,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6571216672479498273, guid: da8897049056ac74d9821d4f08830cd3, type: 3}
+      propertyPath: dy
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571216672479498273, guid: da8897049056ac74d9821d4f08830cd3, type: 3}
+      propertyPath: Lock.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571216672479498273, guid: da8897049056ac74d9821d4f08830cd3, type: 3}
+      propertyPath: Lock.Array.data[0]
+      value: 
+      objectReference: {fileID: 680388226}
     - target: {fileID: 6571216672479498274, guid: da8897049056ac74d9821d4f08830cd3, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -826,6 +861,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6229722630180063522, guid: dbaf682b7a690f74e851e3a7a1361666, type: 3}
+      propertyPath: dx
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229722630180063522, guid: dbaf682b7a690f74e851e3a7a1361666, type: 3}
+      propertyPath: dy
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229722630180063522, guid: dbaf682b7a690f74e851e3a7a1361666, type: 3}
+      propertyPath: IsLock
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229722630180063522, guid: dbaf682b7a690f74e851e3a7a1361666, type: 3}
+      propertyPath: Lock.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229722630180063522, guid: dbaf682b7a690f74e851e3a7a1361666, type: 3}
+      propertyPath: Lock.Array.data[0]
+      value: 
+      objectReference: {fileID: 346753297}
     - target: {fileID: 6229722630180063523, guid: dbaf682b7a690f74e851e3a7a1361666, type: 3}
       propertyPath: m_Name
       value: Ring_Orange_11
